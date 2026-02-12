@@ -1,0 +1,38 @@
+# BRACS preprocessing configuration
+# All paths below are placeholders — update them to match your local setup.
+#
+# This file is loaded by scripts in 01_patch_extraction/ via:
+#   preproc_conf = OmegaConf.load("../conf/preproc.yaml")
+#   preproc_conf = preproc_conf["classic_mil_on_embeddings_bag"]["bracs_224_224_patches"]
+
+classic_mil_on_embeddings_bag:
+  bracs_224_224_patches:
+    wsi_extension: .svs
+    cv_split_dir: <YOUR_PATH>/cv_splits_bracs/
+    data_root_dir: <YOUR_PATH>/bracs_icar/
+    WSI_root_dir: <YOUR_PATH>/bracs_icar/BRACS_WSI/
+    annotation_root_dir: <YOUR_PATH>/bracs_icar/BRACS_EXPORT_GEOJSON/
+    mask_dir: <YOUR_PATH>/bracs_icar/patch_extraction_data_224/maskwsi_processed_level4_224_fp/
+    reference_image_macenko_bracs: <YOUR_PATH>/01_raw_patches/reference_image_patches_level4_224_224_3_bracs.npy
+
+    img_dir_lvl4: <YOUR_PATH>/bracs_icar/patch_extraction_data_224/extracted_level4/
+    img_dir_lvl4_5fold: <YOUR_PATH>/bracs_icar/patch_extraction_data_224/extracted_level4_5fold/
+    img_dir_lvl4_5fold_multistrat: <YOUR_PATH>/bracs_icar/patch_extraction_data_224/extracted_level4_5fold_multistrat/
+
+    weights_dir: <YOUR_PATH>/weights/bracs_finetuning/
+
+    patch_dir_nonorm: <YOUR_PATH>/bracs_icar/patch_extraction_data_224/extracted_patches_224_level4/
+    patch_dir_macenko_bracs: <YOUR_PATH>/bracs_icar/patch_extraction_data_224/extracted_patches_224_level4_macenko/
+    patch_size: 224
+    patch_level: 2
+
+    # Backbone weights
+    resnet50_embedder_weights_macenko: ${.weights_dir}weights_train_resnet50_smallLRbackbone_simplehead_level4_macenko_bracs_50epochs/checkpoint_epoch_33_1.4022CE_49_acc.pth
+    uni_embedder_weights: <YOUR_PATH>/weights/vit_large_patch16_224.dinov2_uni_mass100k.pth
+    uni_embedder_finetuned_weights_macenko: ${.weights_dir}weights_train_uni_smallLRbackbone_simplehead_level4_macenko_bracs_50epochs/checkpoint_epoch_15_1.1585CE_54_acc.pth
+
+    # Embedding output directories
+    resnet50_emb_dir_macenko: <YOUR_PATH>/bracs_icar/patch_embeddings/resnet50_embs_2048_level4_macenko/
+    uni_emb_dir_nonorm: <YOUR_PATH>/bracs_icar/patch_embeddings/uni_embs_1024_level4_nonorm/
+    uni_emb_dir_macenko: <YOUR_PATH>/bracs_icar/patch_embeddings/uni_embs_1024_level4_macenko/
+    uni_finetuned_emb_dir_macenko: <YOUR_PATH>/bracs_icar/patch_embeddings/uni_finetuned_embs_1024_level4_macenko/

@@ -1,0 +1,2 @@
+Cohort,Patients (n),WSIs (n),"WSIs/patient, median [IQR]","WSIs/patient, min–max","Patches/WSI, median [IQR]","Patches/WSI, min–max","Patches/patient, median [IQR]","Patches/patient, min–max",Total patches (2.5x)
+Semmelweis,286,329,"1 [1, 1]",1–4,"371 [288, 444]",103–777,"380 [298, 496]",103–2128,122507

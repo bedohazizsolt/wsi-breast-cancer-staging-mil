@@ -1,0 +1,62 @@
+classic_mil_on_embeddings_bag:
+  nightingale_224_224_patches:
+    wsi_extension: .ndpi
+    data_root_dir: <YOUR_PATH>/ndpi/
+    stage_labels_csv: <YOUR_PATH>/v2.1/outcomes.csv
+    slide_biopsy_map: <YOUR_PATH>/v2.1/biopsy-slides.csv
+    mask_dir: <YOUR_PATH>/01_raw_patches/patch_extraction_data_224/maskwsi_processed_level4_224_fp/
+    
+    reference_image_macenko: <YOUR_PATH>/01_raw_patches/reference_image_patches_level4_224_224_3_bracs.npy
+    
+    patch_dir_macenko: <YOUR_PATH>/01_raw_patches/patch_extraction_data_224/extracted_patches_224_level4_macenko/
+    patch_size: 224
+    patch_level: 4
+    
+    # extra variables for improved masking
+    cv_splits: <YOUR_PATH>/cv_splits_paper/
+    masking_adapt: -1
+    
+    mask_dir_improved_v2: <YOUR_PATH>/01_raw_patches/patch_extraction_data_224/maskwsi_processed_level4_224_fp_improved_v2/
+    mask_thumbnail_dir_improved_v2: <YOUR_PATH>/01_raw_patches/patch_extraction_data_224/maskwsi_processed_level4_224_thumbnail_improved_v2/
+    patch_dir_macenko_improved_v2: <YOUR_PATH>/01_raw_patches/patch_extraction_data_224/extracted_patches_224_level4_macenko_improved_v2/
+    
+    
+    # uni embeddings finetuned
+    uni_finetuned_emb_dir_macenko_improved_v2: <YOUR_PATH>/02_patch_embeddings/uni_finetuned_embs_1024_level4_macenko_improved_v2/
+    uni_embedder_finetuned_weights: <YOUR_PATH>/02_patch_embeddings/weights_train_uni_finetuned_simplehead_level4_macenkonorm_bracs_50epochs_checkpoint_epoch_15_1.1585CE_54_acc.pth
+    uni_finetuned_biopsy_dir_macenko_improved_v2_patients: <YOUR_PATH>/02_patch_embeddings/uni_finetuned_biopsy_1024_level4_macenko_improved_v2_patients/
+
+
+
+
+
+
+  jmcs_224_224_patches:
+    wsi_extension: .ndpi
+    data_root_dir:
+    stage_labels_csv: <YOUR_PATH>/v2.1/outcomes.csv
+    slide_biopsy_map: <YOUR_PATH>/v2.1/biopsy-slides.csv
+    mask_dir: <YOUR_PATH>/01_raw_patches/patch_extraction_data_224/maskwsi_processed_level4_224_fp/
+    
+    reference_image_macenko: <YOUR_PATH>/01_raw_patches/reference_image_patches_level4_224_224_3_bracs.npy
+    
+    patch_dir_macenko: <YOUR_PATH>/01_raw_patches/patch_extraction_data_224/extracted_patches_224_level4_macenko/
+    patch_size: 224
+    patch_level: 4
+    
+    # extra variables for improved masking
+    cv_splits: <YOUR_PATH>/cv_splits_paper/
+    masking_adapt: -1
+    
+    mask_dir_improved_v2: <YOUR_PATH>/01_raw_patches/patch_extraction_data_224/maskwsi_processed_level4_224_fp_improved_v2/
+    mask_thumbnail_dir_improved_v2: <YOUR_PATH>/01_raw_patches/patch_extraction_data_224/maskwsi_processed_level4_224_thumbnail_improved_v2/
+    patch_dir_macenko_improved_v2: <YOUR_PATH>/01_raw_patches/patch_extraction_data_224/extracted_patches_224_level4_macenko_improved_v2/
+    
+    
+    # uni embeddings finetuned
+    uni_finetuned_emb_dir_macenko_improved_v2: <YOUR_PATH>/02_patch_embeddings/uni_finetuned_embs_1024_level4_macenko_improved_v2/
+    uni_embedder_finetuned_weights: <YOUR_PATH>/02_patch_embeddings/weights_train_uni_finetuned_simplehead_level4_macenkonorm_bracs_50epochs_checkpoint_epoch_15_1.1585CE_54_acc.pth
+    uni_finetuned_biopsy_dir_macenko_improved_v2_patients_rev: <YOUR_PATH>/02_patch_embeddings/uni_finetuned_biopsy_1024_level4_macenko_improved_v2_patients_rev/
+    uni_finetuned_biopsy_dir_macenko_improved_v2_biopsies_rev: <YOUR_PATH>/02_patch_embeddings/uni_finetuned_biopsy_1024_level4_macenko_improved_v2_biopsies_rev/
+    uni_finetuned_biopsy_dir_macenko_improved_v2_patients_excluded_slides_cluster_tsne_1_3_rev: <YOUR_PATH>/02_patch_embeddings/uni_finetuned_biopsy_1024_level4_macenko_improved_v2_patients_excluded_slides_cluster_tsne_1_3_rev/
+    uni_finetuned_biopsy_dir_macenko_improved_v2_patients_excluded_slides_cluster_tsne_1_2_3_rev: <YOUR_PATH>/02_patch_embeddings/uni_finetuned_biopsy_1024_level4_macenko_improved_v2_patients_excluded_slides_cluster_tsne_1_2_3_rev/

@@ -1,0 +1,2 @@
+Cohort,Patients (n),WSIs (n),"WSIs/patient, median [IQR]","WSIs/patient, min–max","Patches/WSI, median [IQR]","Patches/WSI, min–max","Patches/patient, median [IQR]","Patches/patient, min–max",Total patches (2.5x)
+Nightingale,574,9489,"11 [5, 24]",1–110,"193 [100, 312]",1–819,"1228 [458, 5812]",46–28286,2058794

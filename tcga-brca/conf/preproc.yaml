@@ -1,0 +1,28 @@
+classic_mil_on_embeddings_bag:
+  tcga_brca_224_224_patches_jmcs:
+    wsi_extension: .svs
+    cv_split_dir: <YOUR_PATH>/cv_splits_tcga/
+    stage_labels_csv: ${.data_root_dir}brca_tcga_pan_can_atlas_2018/data_clinical_patient.txt
+
+    data_root_dir: <YOUR_PATH>/tcga-brca_breast_cancer_external_validation/
+    slide_root_dir: <YOUR_PATH>/tcga-brca_breast_cancer_external_validation/WSI/
+
+    mask_dir: ${.data_root_dir}patch_extraction_data_224/maskwsi_processed_level4_224_fp/
+    reference_image_macenko_bracs: <YOUR_PATH>/01_raw_patches/reference_image_patches_level4_224_224_3_bracs.npy
+
+    patch_dir_macenko_bracs: ${.data_root_dir}patch_extraction_data_224/extracted_patches_224_level4_macenko_bracs/
+    patch_size: 224
+    patch_level: 2
+    masking_adapt: -1
+    
+    # embeddings
+    uni_embedder_finetuned_weights_macenko: ${.data_root_dir}patch_embeddings/model_weights/weights_train_uni_finetuned_simplehead_level4_macenkonorm_bracs_50epochs_checkpoint_epoch_15_1.1585CE_54_acc.pth
+    uni_finetuned_emb_dir_macenko: ${.data_root_dir}patch_embeddings/uni_finetuned_embs_1024_level4_macenko/
+    
+    # biopsy
+    uni_finetuned_biopsy_dir_macenko: ${.data_root_dir}patch_embeddings/uni_finetuned_biopsy_1024_level4_macenko/
+
+
+
+
+    

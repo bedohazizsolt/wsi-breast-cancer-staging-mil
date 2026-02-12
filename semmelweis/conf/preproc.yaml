@@ -1,0 +1,26 @@
+project_mil:
+  wsi_extension: .mrxs
+  data_root_dir: <YOUR_PATH>/
+  code_root_dir: <YOUR_PATH>/
+  slides_root_dir: ${.data_root_dir}00_raw_data/
+  
+  metadata_xls: ${.data_root_dir}00_raw_data/HE_clinicopathological_data.xls
+
+  # 01_raw_patches
+  patch_size: 224
+  patch_level: 4
+  masking_adapt: 3
+  
+  mask_save_dir: ${.data_root_dir}01_raw_patches/classic_mil/patch_extraction_data_${.patch_level}_${.patch_size}/maskwsi_processed_level_${.patch_level}_${.patch_size}_fp/
+  mask_thumbnail_save_dir: ${.data_root_dir}01_raw_patches/classic_mil/patch_extraction_data_${.patch_level}_${.patch_size}/maskwsi_processed_level_${.patch_level}_${.patch_size}_fp_thumbnail/
+
+  reference_image_macenko_new_bracs: ${.data_root_dir}/01_raw_patches/classic_mil/reference_image_patches_level_4_224_224_3_bracs.npy
+  
+  patch_dir_macenko_new_bracs: ${.data_root_dir}01_raw_patches/classic_mil/patch_extraction_data_${.patch_level}_${.patch_size}/extracted_patches_level_${.patch_level}_${.patch_size}_macenko_new_bracs/
+
+  
+  # 02_patch_embeddings
+  uni_finetuned_embedder_weights: ${.data_root_dir}02_patch_embeddings/classic_mil/model_weights/weights_train_uni_finetuned_simplehead_level4_macenkonorm_bracs_50epochs_checkpoint_epoch_15_1.1585CE_54_acc.pth
+  
+  uni_finetuned_emb_dir_macenko_new_bracs: ${.data_root_dir}02_patch_embeddings/classic_mil/uni_finetuned_embs_1024_level_${.patch_level}_${.patch_size}_macenko_new_bracs/
+  uni_finetuned_biopsy_dir_macenko_new_bracs: ${.data_root_dir}04_embeddings_biopsy_bags/classic_mil/uni_finetuned_biopsy_1024_level_${.patch_level}_${.patch_size}_macenko_new_bracs/
